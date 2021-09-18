@@ -1,0 +1,29 @@
+{
+	"languageserver": {
+		// https://github.com/golang/tools/blob/master/gopls/doc/vim.md#cocnvim
+		"go": {
+			"command": "gopls",
+			"rootPatterns": [
+				"go.mod"
+			],
+			"trace.server": "verbose",
+			"filetypes": [
+				"go"
+			],
+			"initializationOptions": {
+				"usePlaceholders": true,
+				"gofumpt": true,
+				"linkTarget": ""
+			}
+		}
+	},
+	"coc.preferences.formatOnSaveFiletypes": [
+		"go",
+		"python",
+		"markdown",
+		"json"
+	],
+	"pyright.enable": true,
+	"python.formatting.provider": "yapf",
+	"python.linting.flake8Enabled": true
+}
