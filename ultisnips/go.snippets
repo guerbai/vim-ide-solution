@@ -1,0 +1,150 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+snippet def "defer func() { ... }"
+defer func() {
+	${0:${VISUAL}}
+}()
+endsnippet
+
+# full interface snippet
+snippet interface "interface I { ... }"
+type ${1:Interface} interface {
+	${2:/* TODO: add methods */}
+}
+endsnippet
+
+# if inline error
+snippet ife "If with inline error"
+if err := ${1:condition}; err != nil {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# error snippet
+snippet errn "Error return" b
+if err != nil {
+	return err
+}
+${0}
+endsnippet
+
+snippet errnwf "Error return wrapf" b
+if err != nil {
+	return errors.Wrapf(err, "${1:message %v}", ${2:args...})
+}
+${0}
+endsnippet
+
+# error multiple return
+snippet errn, "Error return with two return values" b
+if err != nil {
+	return ${1:nil}, ${2:err}
+}
+${0}
+endsnippet
+
+snippet errn,wf "Error return wrapf with two return values" b
+if err != nil {
+	return nil, errors.Wrapf(err, "${1:message %v}", ${2:args...})
+}
+${0}
+endsnippet
+
+# error panic
+snippet errp "Error panic" b
+if err != nil {
+	panic(${1})
+}
+${0}
+endsnippet
+
+# for integer loop
+snippet fori "for 0..N-1 { ... }"
+for ${1:i} := 0; $1 < ${2:N}; $1++ {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# for range loop
+snippet forr "for k, v := range items { ... }"
+for ${2:k}, ${3:v} := range ${1} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# Fmt Printf debug
+snippet ff "fmt.Printf(...)"
+fmt.Printf("$1 = %+v\n", ${1:${VISUAL}})
+endsnippet
+
+# Fmt Println debug
+snippet fn "fmt.Println(...)"
+fmt.Println("${1:${VISUAL}}")
+endsnippet
+
+# Fmt Errorf wrap
+snippet few "fmt.Errorf(%w, err)"
+fmt.Errorf("${1:message}: %w", ${2:${VISUAL:err}})
+endsnippet
+
+# ok
+snippet ok "if !ok { ... }"
+if !ok {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# switch
+snippet switch "switch x { ... }"
+switch ${1:var} {
+case ${2:value1}:
+	${0}
+}
+endsnippet
+
+# sprintf
+snippet sp "fmt.Sprintf(...)"
+fmt.Sprintf("%${1:s}", ${2:var})
+endsnippet
+
+# test function
+snippet test "func TestXYZ(t *testing.T) { ... }"
+func Test${1:Function}(t *testing.T) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet lci "logs.CtxInfo(ctx, )" b
+logs.CtxInfo(ctx, "${1:message}")
+endsnippet
+
+snippet lcw "logs.CtxInfo(ctx, )" b
+logs.CtxWarn(ctx, "${1:message}")
+endsnippet
+
+snippet lce "logs.CtxInfo(ctx, )" b
+logs.CtxError(ctx, "${1:message}")
+endsnippet

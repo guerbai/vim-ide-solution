@@ -1,6 +1,6 @@
 vim.api.nvim_set_keymap('n', '<Leader>tt', ':NERDTreeToggle<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader>tr', ':NERDTreeRefreshRoot<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<Leader>tf', ':NERDTreeFocus<CR>', {noremap = true})
+-- vim.api.nvim_set_keymap('n', '<Leader>tf', ':NERDTreeFocus<CR>', {noremap = true})
 
 
 vim.g.NERDTreeWinPos = "right"

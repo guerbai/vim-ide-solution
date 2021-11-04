@@ -3,7 +3,8 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
 -- nvim
-Plug 'liuchengxu/vim-which-key'
+-- Plug 'liuchengxu/vim-which-key'
+Plug 'folke/which-key.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
 -- UI
@@ -30,10 +31,10 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug('junegunn/fzf', {['do']='->fzf#install()'})
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
--- Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+-- Plug('junegunn/fzf', {['do']='->fzf#install()'})
+-- Plug 'junegunn/fzf.vim'
 -- Plug 'lewis6991/gitsigns.nvim'
 -- Plug 'kyazdani42/nvim-tree.lua'
 -- Plug 'akinsho/toggleterm.nvim'
@@ -42,9 +43,7 @@ Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-commentary'
 Plug 'windwp/nvim-spectre' -- project replace
 Plug 'windwp/nvim-autopairs'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'codota/tabnine-vim'
+-- Plug 'codota/tabnine-vim'
 -- Plug 'neovim/nvim-lspconfig'
 -- Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 -- Plug('fatih/vim-go', {['do']=':GoUpdateBinaries'})
@@ -60,15 +59,14 @@ Plug 'kristijanhusak/vim-dadbod-ui' -- mysql-ui
 vim.call('plug#end')
 
 -- one line config
-vim.cmd [[ colorscheme material ]]
+vim.cmd [[ colorscheme onedark ]]
 vim.g.material_theme_style = 'palenight'
 vim.api.nvim_set_keymap('v', '<Leader>/', ':Commentary<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader>sh', ':FloatermToggle<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', '<Leader>', ":WhichKey ','<CR>", {noremap = true, silent=true})
+-- vim.api.nvim_set_keymap('n', '<Leader>', ":WhichKey ','<CR>", {noremap = true, silent=true})
 vim.g.gitgutter_map_keys = 0
 -- vim.g.rainbow_active = 1
 vim.g.rooter_patterns = {'.git', 'go.mod', 'plugged'}
-vim.g.UltiSnipsExpandTrigger = "<C-j>"
 
 local load_modules = {
    "plugins.configs.vista",
@@ -76,8 +74,9 @@ local load_modules = {
    "plugins.configs.coc",
    "plugins.configs.nerdtree",
    "plugins.configs.airline",
-   "plugins.configs.fzf",
+   "plugins.configs.telescope",
    "plugins.configs.mysql",
+   "plugins.configs.whichkey",
 }
 
 for _, module in ipairs(load_modules) do
