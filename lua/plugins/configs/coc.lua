@@ -10,7 +10,7 @@ silent_map('n', '<Leader>g]', '<Plug>(coc-diagnostic-next)')
 silent_map('n', '<Leader>ge', ':CocList diagnostics<CR>')
 silent_map('n', '<Leader>gf', '<Plug>(coc-fix-current)')
 -- silent_map('n', '<Leader>lt', '<Plug>(coc-format)', {silent=true})
-silent_map('n', '<Leader>rn', '<Plug>(coc-rename)')
+silent_map('n', '<Leader>gn', '<Plug>(coc-rename)')
 silent_map('i', '<C-l>', '<Plug>(coc-snippets-expand)')
 -- vim.cmd 'inoremap <expr> <Tab> pumvisible() ? "\\<C-n>" : "\\<Tab>"'
 -- vim.cmd 'inoremap <expr> <S-Tab> pumvisible() ? "\\<C-p>" : "\\<S-Tab>"'

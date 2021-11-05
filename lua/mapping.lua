@@ -7,7 +7,8 @@ end
 -- edit
 -- nore_map('n', '<Leader>w', ':write<CR>')
 nore_map('v', '<Leader>y', '"*y')
-nore_map('n', '<Leader>s', 'g<C-g>2gs')
+nore_map('n', '<Leader>bs', 'g<C-g>2gs')
+nore_map('n', '<Leader>s', ':write<CR>')
 
 -- config
 nore_map('n', '<Leader>vi', ':e ~/.config/nvim/init.lua<CR>')
@@ -19,7 +20,6 @@ nore_map('n', '<Leader>vr', ':lua ReloadMyConfig()<CR>')
 
 -- buffer/window
 nore_map('n', '<Leader>e', ':enew<CR>')
-nore_map('n', '<Leader>bw', ':write<CR>')
 nore_map('n', '<Leader>bn', ':bn<CR>')
 nore_map('n', '<Leader>bp', ':bp<CR>')
 nore_map('n', '<Leader>bd', ':bp|bd #<cr>')
