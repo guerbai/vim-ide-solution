@@ -9,14 +9,14 @@ Plug 'nvim-lua/plenary.nvim'
 
 -- UI
 Plug 'mhinz/vim-startify'
-Plug 'junegunn/goyo.vim'
+-- Plug 'junegunn/goyo.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 -- Plug 'luochen1990/rainbow'
 -- Plug 'kyazdani42/nvim-web-devicons'
 
 -- Plug 'ayu-theme/ayu-vim'
--- Plug('folke/tokyonight.nvim', {branch='main'})
+Plug('folke/tokyonight.nvim', {branch='main'})
 Plug 'morhetz/gruvbox'
 Plug 'fatih/molokai'
 Plug 'joshdick/onedark.vim'
@@ -31,7 +31,7 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
+-- Plug 'junegunn/gv.vim'
 Plug 'nvim-telescope/telescope.nvim'
 -- Plug('junegunn/fzf', {['do']='->fzf#install()'})
 -- Plug 'junegunn/fzf.vim'
@@ -59,8 +59,8 @@ Plug 'kristijanhusak/vim-dadbod-ui' -- mysql-ui
 vim.call('plug#end')
 
 -- one line config
-vim.cmd [[ colorscheme onedark ]]
-vim.g.material_theme_style = 'palenight'
+vim.cmd [[ colorscheme tokyonight ]]
+-- vim.g.material_theme_style = 'palenight'
 vim.api.nvim_set_keymap('v', '<Leader>/', ':Commentary<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader>sh', ':FloatermToggle<CR>', {noremap = true})
 -- vim.api.nvim_set_keymap('n', '<Leader>', ":WhichKey ','<CR>", {noremap = true, silent=true})
